@@ -1,0 +1,381 @@
+/* ==========================================================================
+   SHREYAS R A — EDITORIAL PORTFOLIO DESIGN SYSTEM
+   Palette: Black (#050505), Off-White (#F5F5F5), Neon Lime (#B7FF00)
+   Aesthetic: Luxury, Editorial, Minimal, Futuristic, High-End Developer
+   ========================================================================== */
+
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #0a0a0a;
+  --bg-surface: #0e0e0e;
+  --bg-surface-elevated: #141414;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+  
+  --accent-lime: #b7ff00;
+  --accent-lime-dim: rgba(183, 255, 0, 0.15);
+  --accent-lime-glow: rgba(183, 255, 0, 0.35);
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-lime: rgba(183, 255, 0, 0.45);
+  
+  --font-display: 'Syne', 'Space Grotesk', sans-serif;
+  --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  
+  --container-max: 1600px;
+  --nav-height: 80px;
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 768px), (max-height: 560px) {
+  :root {
+    --nav-height: 56px;
+  }
+}
+
+@media (max-height: 420px) {
+  :root {
+    --nav-height: 48px;
+  }
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+#root,
+.portfolio-app-root,
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--accent-lime);
+  color: #000000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-lime);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  word-break: normal;
+}
+
+.text-justify {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  -webkit-hyphens: auto !important;
+  hyphens: auto !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Responsive Desktop-only line break */
+@media (max-width: 768px) {
+  .desktop-break {
+    display: none !important;
+  }
+}
+
+/* Editorial Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 2.5vw, 2.25rem);
+  padding-right: clamp(1rem, 2.5vw, 2.25rem);
+  box-sizing: border-box;
+}
+
+/* Reduced left/right padding for header and hero bar */
+.navbar-inner-container,
+.hero-bottom-bar {
+  max-width: 100% !important;
+  padding-left: clamp(1.25rem, 3vw, 2.5rem) !important;
+  padding-right: clamp(1.25rem, 3vw, 2.5rem) !important;
+}
+
+.section-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: clamp(4rem, 10vh, 9rem);
+  padding-bottom: clamp(4rem, 10vh, 9rem);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Section Header Meta */
+.section-meta-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  width: 100%;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-lime);
+  margin-bottom: 1rem;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-lime);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.15rem, 4.4vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Editorial Buttons */
+.btn-editorial-lime {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--accent-lime);
+  color: #000000;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 1.15rem 2.25rem;
+  border: 1px solid var(--accent-lime);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-editorial-lime:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(183, 255, 0, 0.2);
+}
+
+.btn-editorial-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 1.15rem 2.25rem;
+  border: 1px solid var(--border-medium);
+  transition: var(--transition-smooth);
+}
+
+.btn-editorial-outline:hover {
+  border-color: var(--accent-lime);
+  color: var(--accent-lime);
+  transform: translateY(-2px);
+}
+
+/* Cursor custom styling */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+}
+
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-follower.hovered {
+  width: 60px;
+  height: 60px;
+  border-color: var(--accent-lime);
+  background-color: rgba(183, 255, 0, 0.08);
+}
+
+.cursor-follower.project-hover {
+  width: 80px;
+  height: 80px;
+  background-color: var(--accent-lime);
+  border-color: var(--accent-lime);
+}
+
+.cursor-follower .cursor-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #000000;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cursor-follower.project-hover .cursor-text {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hide custom cursor on coarse touch screens */
+@media (pointer: coarse), (max-width: 992px) {
+  .cursor-dot,
+  .cursor-follower {
+    display: none !important;
+  }
+}
+
+/* Subtle Grid Background Pattern */
+.bg-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Text glow accent */
+.text-lime {
+  color: var(--accent-lime) !important;
+}
+
+/* Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
