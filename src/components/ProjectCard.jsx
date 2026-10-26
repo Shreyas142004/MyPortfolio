@@ -167,20 +167,28 @@ export default function ProjectCard({ project, index, isReversed }) {
 
               {/* Project Image or Elegant Fallback */}
               {!imageFailed ? (
-                <img
-                  src={project.image}
-                  alt={`${project.title} - Showcase preview`}
-                  onError={() => setImageFailed(true)}
-                  className="showcase-img"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                    transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease',
-                    filter: 'grayscale(15%) brightness(0.92)',
-                  }}
-                />
+                <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+                  <source
+                    srcSet={project.image ? project.image.replace(/\.(png|jpe?g)$/, '.webp') : ''}
+                    type="image/webp"
+                  />
+                  <img
+                    src={project.image}
+                    alt={`${project.title} - Showcase preview`}
+                    loading="lazy"
+                    decoding="async"
+                    onError={() => setImageFailed(true)}
+                    className="showcase-img"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                      transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease',
+                      filter: 'grayscale(15%) brightness(0.92)',
+                    }}
+                  />
+                </picture>
               ) : (
                 /* High-tech fallback placeholder */
                 <div

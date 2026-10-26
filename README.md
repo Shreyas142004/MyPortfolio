@@ -157,17 +157,18 @@ d:\Portfolio
 │   ├── audio/
 │   │   └── dust-on-the-morning-keys.mp3   # Ambient soundscape track
 │   ├── projects/                          # High-res project showcase screenshots
-│   │   ├── eduguide-ai.png
-│   │   ├── smart-utility-portal.png
-│   │   ├── ai-thunderstorm-nowcasting.png
-│   │   ├── smart-parking.png
-│   │   ├── smart-crm.png
-│   │   ├── speech-to-text.png
-│   │   └── atm-simulation-c.png
+│   │   ├── eduguide-ai.webp
+│   │   ├── smart-utility-portal.webp
+│   │   ├── ai-thunderstorm-nowcasting.webp
+│   │   ├── smart-parking.webp
+│   │   ├── smart-crm.webp
+│   │   ├── speech-to-text.webp
+│   │   └── atm-simulation-c.webp
 │   ├── resume/
 │   │   └── Shreyas.pdf                    # Printable developer resume
 │   ├── Hero-Image.jpeg                    # OpenGraph / Meta social preview image
-│   ├── hero-cutout.png                    # Hero section graphic portrait cutout
+│   ├── hero-cutout.webp                   # High-performance hero cutout (WebP)
+│   ├── _redirects                         # Netlify SPA routing fallback
 │   └── favicon.svg                        # Neon lime portfolio favicon
 │
 ├── src/
@@ -254,6 +255,19 @@ d:\Portfolio
    npm run lint
    ```
    Uses `oxlint` for high-speed static code analysis.
+
+8. **Optimize static assets (Sharp WebP Pipeline):**
+   ```bash
+   npm run optimize:images
+   ```
+   Automatically scans `public/` and `public/projects/`, converting PNG/JPEG images into compressed WebP assets (~90% size reduction).
+
+### Netlify Deployment
+The repository includes dedicated configuration for Netlify (`netlify.toml` and `public/_redirects`):
+- **Build Command:** `npm run build`
+- **Publish Directory:** `dist`
+- **Environment Variables:** Add `VITE_WEB3FORMS_ACCESS_KEY` in **Site configuration &rarr; Environment variables**.
+- **Edge Caching:** Built-in `Cache-Control` rules for all WebP, PNG, SVG, and audio assets to ensure 0ms repeated loads from Netlify's global CDN.
 
 ---
 

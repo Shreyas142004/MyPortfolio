@@ -4,6 +4,7 @@ import { ArrowUpRight, ArrowDown } from 'lucide-react';
 
 export default function Hero() {
   const [imgError, setImgError] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
     <section
@@ -127,33 +128,48 @@ export default function Hero() {
             }}
           >
             {!imgError ? (
-              <img
-                src="/hero-cutout.png"
-                alt="Shreyas R A — Software Developer"
-                onError={() => setImgError(true)}
-                style={{
-                  height: '100%',
-                  width: 'auto',
-                  maxWidth: '90vw',
-                  objectFit: 'contain',
-                  objectPosition: 'bottom center',
-                  display: 'block',
-                  filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.95)) contrast(104%)',
-                  userSelect: 'none',
-                }}
-              />
+              <picture style={{ display: 'contents' }}>
+                <source srcSet="/hero-cutout.webp" type="image/webp" />
+                <img
+                  src="/hero-cutout.webp"
+                  alt="Shreyas R A — Software Developer"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
+                  onLoad={() => setImgLoaded(true)}
+                  onError={() => setImgError(true)}
+                  style={{
+                    height: '100%',
+                    width: 'auto',
+                    maxWidth: '90vw',
+                    objectFit: 'contain',
+                    objectPosition: 'bottom center',
+                    display: 'block',
+                    filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.95)) contrast(104%)',
+                    userSelect: 'none',
+                    opacity: imgLoaded ? 1 : 0.85,
+                    transition: 'opacity 0.35s ease-out',
+                  }}
+                />
+              </picture>
             ) : (
-              <img
-                src="/Hero-Image.jpeg"
-                alt="Shreyas R A"
-                style={{
-                  height: '100%',
-                  width: 'auto',
-                  objectFit: 'contain',
-                  objectPosition: 'bottom center',
-                  display: 'block',
-                }}
-              />
+              <picture style={{ display: 'contents' }}>
+                <source srcSet="/Hero-Image.webp" type="image/webp" />
+                <img
+                  src="/Hero-Image.jpeg"
+                  alt="Shreyas R A"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
+                  style={{
+                    height: '100%',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    objectPosition: 'bottom center',
+                    display: 'block',
+                  }}
+                />
+              </picture>
             )}
 
             {/* Bottom subtle fade to blend smoothly into page floor */}
