@@ -418,7 +418,7 @@ export const projects = [
       'Deployment & Hosting': ['Vercel Edge Network', 'Zero Dependencies', 'Ultra-Lightweight Bundle', 'Git'],
     },
     image: '/projects/speech-to-text.webp',
-    github: 'https://github.com/Shreyas142004',
+    github: 'https://github.com/Shreyas142004/Speech-to-Text.git',
     live: 'https://speech-to-text-eight-mu.vercel.app/',
     statusBadge: 'LIVE PLATFORM',
     featured: true,
