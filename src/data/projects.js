@@ -168,8 +168,8 @@ export const projects = [
   {
     id: '03',
     number: '03',
-    title: 'AI THUNDERSTORM & LIGHTNING NOWCASTING — DEEP LEARNING METEOROLOGICAL PREDICTION',
-    category: 'Deep Learning & Meteorological AI (Backend / Modeling WIP)',
+    title: 'AEROCAST-AI — THUNDERSTORM & LIGHTNING NOWCASTING',
+    category: 'Meteorological AI / GBDT Ensemble & Geospatial GIS',
     tagline:
       'A spatiotemporal deep learning nowcasting engine predicting severe convective thunderstorms and lightning discharge events in near-real-time using radar reflectivity cubes.',
     description:
@@ -191,9 +191,9 @@ export const projects = [
       'Serving & Tooling': ['FastAPI (Inference Backend)', 'Python Scripts', 'Git', 'Virtualenv'],
     },
     image: '/projects/ai-thunderstorm-nowcasting.webp',
-    github: 'https://github.com/Shreyas142004/AI-Thunderstorm-Lightning-Nowcasting',
+    github: 'https://github.com/Shreyas142004/AeroCast-AI.git',
     live: null,
-    statusBadge: 'WORK IN PROGRESS (AI/ML)',
+    statusBadge: 'FLAGSHIP AI PLATFORM',
     featured: true,
     architectureTitle: '01 // SPATIOTEMPORAL DEEP LEARNING PIPELINE',
     architecture: [
@@ -701,11 +701,11 @@ export const journeyTimeline = [
   },
   {
     year: '2026',
-    role: 'AI / ML & Speech Recognition Engineering',
-    organization: 'AI Models & Speech Intelligence',
+    role: 'AeroCast-AI — Flagship Meteorological AI',
+    organization: 'Convective Physics & Meteorological AI',
     description:
-      'Engineered intelligent AI systems including real-time speech recognition platforms with Web Speech APIs, live audio waveform visualizers, and AI thunderstorm nowcasting research.',
-    badge: 'AI / ML',
+      'Architected and engineered AeroCast-AI: an intelligent, physics-informed thunderstorm and lightning nowcasting system combining a 27-year climatology, 91.24% GBDT ensemble, CARTO Doppler radar, and autonomous alert broadcasts.',
+    badge: 'Flagship AI',
   },
   {
     year: '2026',

@@ -42,7 +42,7 @@ The portfolio showcases **07 curated engineering projects**, each backed by comp
 |---|---|---|---|---|
 | **01** | **EduGuide-AI** *(Flagship)* | Full-Stack / Mobile / GenAI & RAG | Flutter, Dart, FastAPI, Google Gemini, Meta FAISS, Node.js, MongoDB, PyMuPDF | `FLAGSHIP AI` &bull; [Source Code](https://github.com/Shreyas142004/EduGuide-AI) |
 | **02** | **Smart Utility Portal** | Frontend Web App & Academic UI | React 19, Vite, Tailwind CSS v4, Lucide Icons, Client State Models | `FRONTEND ARCHITECTURE` &bull; [Source Code](https://github.com/Shreyas142004/Smart-Utility-Portal) |
-| **03** | **AI Thunderstorm Nowcasting** | Deep Learning Meteorological AI (WIP) | Python, PyTorch, ConvLSTM, Doppler Radar (dBZ), NumPy, SciPy, FastAPI | `WORK IN PROGRESS` &bull; [Source Code](https://github.com/Shreyas142004/AI-Thunderstorm-Lightning-Nowcasting) |
+| **03** | **AeroCast-AI** *(Flagship)* | Meteorological AI / Geospatial GIS | Python, GBDT Ensemble, CARTO GIS Radar, Google Gemini, Flask, MongoDB | `FLAGSHIP AI` &bull; [Source Code](https://github.com/Shreyas142004/AeroCast-AI.git) |
 | **04** | **Smart Parking Portal** | Full-Stack IoT & Web Reservation | React, Node.js, Express, MongoDB, JWT, Nodemailer, Atomic Locking | `LIVE PLATFORM` &bull; [Live Demo](https://smart-parking-portal.vercel.app/) &bull; [Source Code](https://github.com/Shreyas142004/Smart-Parking-Portal) |
 | **05** | **Smart CRM** | Enterprise MERN Web Platform | React, Node.js, Express, MongoDB, Aggregations, Kanban | `GITHUB REPO` &bull; [Source Code](https://github.com/Shreyas142004/Smart-CRM) |
 | **06** | **Speech to Text** | Audio Transcriber & Speech AI | JavaScript (ES6+), Web Speech API, Web Audio API, HTML5 Canvas | `LIVE PLATFORM` &bull; [Live Demo](https://speech-to-text-eight-mu.vercel.app/) &bull; [Source Code](https://github.com/Shreyas142004) |
@@ -75,7 +75,7 @@ The portfolio showcases **07 curated engineering projects**, each backed by comp
 </details>
 
 <details>
-<summary><b>03 // AI Thunderstorm & Lightning Nowcasting — Deep Learning Meteorological Prediction</b></summary>
+<summary><b>03 // AeroCast-AI — Thunderstorm & Lightning Nowcasting (Flagship)</b></summary>
 
 - **Scope:** Meteorological AI research and deep learning modeling pipeline (research & backend WIP; frontend visualization dashboard currently in progress; built without Docker).
 - **Radar Ingestion:** Converts Doppler radar reflectivity grids (dBZ) into 4D spatiotemporal tensor sequences (Batch, Time, Channels, Height, Width) after ground clutter filtering.
